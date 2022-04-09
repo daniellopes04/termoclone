@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
+
+body {
+    background-color: #6E5C62;
+    font-family: 'Kanit', sans-serif;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50;
+}
+
+div {
+    user-select: none;
+}
+
+#first-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-row-cell {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 60;
+    padding: 10px;
+    border-radius: 7px 7px 7px;
+    border: 7px solid #4C4347;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+}
+
+.first-row-cell:hover {
+    cursor: pointer;
+}
+
+.cell {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    padding: 10px;
+    font-size: 60;
+    border-radius: 7px 7px 7px;
+    border: 7px solid #615458;
+    background-color: #615458;
+}
+
+.correct-position {
+    border: 7px solid #3AA394;
+    background-color: #3AA394;
+}
+
+.correct-letter {
+    border: 7px solid #D3AD69;
+    background-color: #D3AD69;
+}
+
+#selected-cell {
+    box-shadow: 0px -5px 0px #4C4347 inset;
+}
