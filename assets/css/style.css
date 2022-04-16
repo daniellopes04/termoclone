@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
 body {
     background-color: #6E5C62;
     font-family: 'Kanit', sans-serif;
+    font-weight: 700;
 }
 
 h1 {
@@ -22,11 +23,7 @@ div {
     align-items: center;
 }
 
-#first-row {
-    margin-top: 10px;
-}
-
-.first-row-cell {
+.open-cell {
     display: flex;
     width: 50px;
     height: 50px;
@@ -40,7 +37,7 @@ div {
     margin: 3px;
 }
 
-.first-row-cell:hover {
+.open-cell:hover {
     cursor: pointer;
 }
 
@@ -48,12 +45,15 @@ div {
     display: flex;
     width: 50px;
     height: 50px;
+    color: white;
     margin: 3px;
     padding: 10px;
     font-size: 60;
     border-radius: 7px 7px 7px;
     border: 7px solid #615458;
     background-color: #615458;
+    justify-content: center;
+    align-items: center;
 }
 
 .correct-position {
@@ -72,7 +72,7 @@ div {
 }
 
 #warning {
-    display: none;
+    display: flex;
     width: 50%;
     height: 40px;
     background-color: #0099FD;
@@ -82,8 +82,75 @@ div {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    margin-bottom: 30px;
+    font-weight: 400;
+    visibility: hidden;
 }
 
 #selected-cell {
     box-shadow: 0px -5px 0px #4C4347 inset;
+}
+
+#keyboard {
+    margin-top: 3rem;
+}
+
+.key-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+
+.key, .selected-key {
+    display: flex;
+    width: 55px;
+    height: 75px;
+    font-size: 30;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px 7px 7px;
+    margin: 0.2rem;
+    color: white;
+    background-color: #4C4347;
+}
+
+.selected-key {
+    background-color: #594B4F;
+}
+
+.correct-key {
+    background-color: #3AA394;
+}
+
+.correct-letter-key {
+    background-color: #D3AD69;
+}
+
+#backspace-key {
+    width: 80px;
+}
+
+#enter-key {
+    width: 150px;
+}
+
+#backspace-key, #enter-key {
+    margin-left: 1rem;
+}
+
+.animate__animated.animate__pulse {
+    --animate-duration: 0.2s;
+}
+
+.animate__animated.animate__bounce {
+    --animate-duration: 0.2s;
+}
+
+.animate__animated.animate__zoomIn {
+    --animate-duration: 0.5s;
+}
+
+.animate__animated.animate__zoomOut {
+    --animate-duration: 1s;
 }
