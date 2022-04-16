@@ -8,18 +8,23 @@ var currentWord = words[getRandomInt(0, 4)]
 console.log(currentWord)
 
 window.addEventListener("keydown", function (event) {
-    if (event.defaultPrevented) {
-        return;
-    }
+    // if (event.defaultPrevented) {
+    //     return;
+    // }
 
     if (alphabet.includes(event.key.toLowerCase())) {
         var current = document.getElementById('selected-cell');
         current.textContent = event.key.toUpperCase();
         setSelectedCell(1);
+        closeWarning();
     }
     switch (event.key) {
         case ('Enter'):
-            checkWordInput();
+            if (checkRowComplete()) {
+                checkWordInput();
+            } else {
+                showWarning('só palavras com 5 letras');
+            }
             break;
         case('ArrowLeft'):
             setSelectedCell(-1);
@@ -35,7 +40,7 @@ window.addEventListener("keydown", function (event) {
             break;
     }
     
-    event.preventDefault();
+    // event.preventDefault();
 }, true);
 
 
@@ -55,6 +60,31 @@ function setCurrentCell() {
     }
 }
 
+function checkRowComplete() {
+    var count = 0;
+    for (let index = 0; index < firstRow.children.length; index++) {
+        const element = firstRow.children[index];
+        if (element.textContent.toLowerCase() !== '') {
+            count = count + 1;
+        }
+    }
+    if (count == firstRow.children.length) {
+        return true;
+    }
+    return false;
+}
+
+function showWarning(text) {
+    const warning = document.getElementById('warning');
+    warning.querySelector('#warning-text').textContent = text;
+    warning.style.display = 'flex';
+}
+
+function closeWarning() {
+    const warning = document.getElementById('warning');
+    warning.style.display = 'none';
+}
+
 function checkWordInput() {
     for (let index = 0; index < firstRow.children.length; index++) {
         const element = firstRow.children[index];
@@ -62,7 +92,16 @@ function checkWordInput() {
             element.classList.add('correct-position');
             element.id = '';
         } else if (currentWord.includes(element.textContent.toLowerCase())) {
-            element.classList.add('correct-letter');
+            var correctIndex = currentWord.indexOf(element.textContent.toLowerCase());
+            if (!firstRow.children[correctIndex].classList.contains('correct-position')) {
+                element.classList.add('correct-letter');
+                element.id = '';
+            } else {
+                element.classList.add('incorrect');
+                element.id = '';
+            }
+        } else {
+            element.classList.add('incorrect');
             element.id = '';
         }
     }

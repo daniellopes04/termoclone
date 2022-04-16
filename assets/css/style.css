@@ -9,22 +9,21 @@ h1 {
     color: white;
     text-align: center;
     font-size: 50;
+    margin-bottom: 5px;
 }
 
 div {
     user-select: none;
 }
 
-#first-row {
+#first-row, .row {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#first-row {
+    margin-top: 10px;
 }
 
 .first-row-cell {
@@ -65,6 +64,24 @@ div {
 .correct-letter {
     border: 7px solid #D3AD69;
     background-color: #D3AD69;
+}
+
+.incorrect {
+    border: 7px solid #312A2C;
+    background-color: #312A2C;
+}
+
+#warning {
+    display: none;
+    width: 50%;
+    height: 40px;
+    background-color: #0099FD;
+    color: white;
+    font-size: 25;
+    border-radius: 7px 7px 7px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 #selected-cell {
