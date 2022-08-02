@@ -1,4 +1,4 @@
 # Termoo Clone
-Clone do game [Termoo](https://term.ooo).
+[Termoo](https://term.ooo) game clone.
 
-Disponível em: https://daniellopes04.github.io/termoclone/.
+Available on: https://daniellopes04.github.io/termoclone/.
